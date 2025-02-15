@@ -1,13 +1,18 @@
-import { useState } from 'react'
 import Squarebutton from './components/SQ-button'
 import FWbutton from './components/FW-button'
+import Navbar from './components/Footer'
 
 const App = () => {
   return (
-      <div>
+  <>
+    <div>
         <div className='mb-5'><Squarebutton /></div>
         <div><FWbutton /></div>
       </div>
+      <footer className='mt-5'>
+        <Navbar/>
+      </footer>
+  </>
   )
 }
 

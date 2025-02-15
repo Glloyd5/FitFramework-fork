@@ -12,7 +12,7 @@ export default {
           100: '#1E1825'
         },
         'fitblue': '#96C5B0',
-        'fitorange': 'FF875C',
+        'fitorange': '#FF875C',
       }
     },
   },
