@@ -1,8 +1,13 @@
+import { useState } from 'react'
 import Squarebutton from './components/SQ-button'
+import FWbutton from './components/FW-button'
 
 const App = () => {
   return (
-      Squarebutton()
+      <div>
+        <div className='mb-5'><Squarebutton /></div>
+        <div><FWbutton /></div>
+      </div>
   )
 }
 
@@ -33,7 +38,7 @@ export default App
 //       </div>
 //       <h1>Vite + React</h1>
 //       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
+//         <button onClick={() => setCount((count) => count + 1)} className='bg-fitpurple-50 p-2 rounded-md'>
 //           count is {count}
 //         </button>
 //         <p>
