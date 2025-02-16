@@ -45,21 +45,3 @@ svg {
   fill: black;
   color: black;
 }
-
-.for-hover:hover svg, .for-hover:hover p, .for-hover:focus svg, .for-hover:focus p {
-  fill: #FF875C;
-  color: #FF875C;
-  cursor: pointer;
-}
-
-.for-hover-2:hover svg, .for-hover-2:hover p, .for-hover-2:focus svg, .for-hover-2:focus p {
-  stroke: #FFFFFF;
-  color: #FFFFFF;
-  cursor: pointer;
-}
-
-.for-hover-3:hover svg, .for-hover-3:hover p, .for-hover-3:focus svg, .for-hover-3:focus p {
-  stroke: #96C5B0;
-  color: #96C5B0;
-  cursor: pointer;
-}

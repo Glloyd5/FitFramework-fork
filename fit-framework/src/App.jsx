@@ -1,26 +1,37 @@
 import Squarebutton from './components/SQ-button'
 import FWbutton from './components/FW-button'
 import Navbar from './components/Footer'
+import Header from './components/Header'
 
 const App = () => {
   return (
   <>
-    <div>
-        <div className='mb-5'><Squarebutton /></div>
-        <div><FWbutton /></div>
+    <body className='max-w-[350px] m-auto bg-fitpurple-100'>
+      <div className='flex flex-col justify-between'>
+        <header className='sticky top-0'>
+          <Header />
+        </header>
+
+        <main className='p-4'>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim cum provident magnam culpa eos quod, distinctio saepe, itaque reprehenderit quidem fuga soluta necessitatibus doloremque sunt molestias nemo ullam! Nisi, aspernatur.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab illum voluptate laborum animi magnam, aliquam placeat nemo quaerat qui magni, accusantium, voluptatum quis iste. Iusto assumenda blanditiis architecto nemo consectetur.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim cum provident magnam culpa eos quod, distinctio saepe, itaque reprehenderit quidem fuga soluta necessitatibus doloremque sunt molestias nemo ullam! Nisi, aspernatur.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab illum voluptate laborum animi magnam, aliquam placeat nemo quaerat qui magni, accusantium, voluptatum quis iste. Iusto assumenda blanditiis architecto nemo consectetur.</p>
+          <div className='mt-5'>
+            <Squarebutton />
+          </div>
+        </main>
+        
+        <footer className='mt-5 sticky bottom-0'>
+            <Navbar/>
+        </footer>
       </div>
-      <footer className='mt-5'>
-        <Navbar/>
-      </footer>
+    </body>
   </>
   )
 }
 
 export default App
-
-
-
-
 
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
@@ -53,7 +64,7 @@ export default App
 //       <p className="read-the-docs">
 //         Click on the Vite and React logos to learn more
 //       </p>
-      
+
 //     </>
 //   )
 // }
