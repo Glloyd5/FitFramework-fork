@@ -1,12 +1,18 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { queryexercises } from "./js/queries";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 /* Authentication */
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+
+/* Authentication */
 const registerForm = document.querySelector('.register');
+
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -44,3 +50,10 @@ registerForm.addEventListener('submit', (e) => {
       console.log(err.message)
     })
 })
+
+queryexercises('primaryMuscles', 'biceps');
+
+
+
+
+
