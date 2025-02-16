@@ -4,6 +4,10 @@ import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+/* Authentication */
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+const registerForm = document.querySelector('.register');
+
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -19,3 +23,24 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const auth = getAuth();
+
+
+
+
+// register form event listener where we will call the create user function
+registerForm.addEventListener('submit', (e) => {
+    e.preventDefault;
+
+    const email = registerForm.email.value;
+    const password = registerForm.password.value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((cred) => {
+      console.log('user created:', cred.user)
+      registerForm.reset();
+    })
+    .catch((err) => {
+      console.log(err.message)
+    })
+})
