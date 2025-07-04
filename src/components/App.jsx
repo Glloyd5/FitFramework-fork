@@ -1,4 +1,6 @@
-import "../App.css";
+import React, { useState } from 'react';
+import "../App.scss";
+import Header from "./Header";
 import Button from "./Button";
 import Search from "./Search";
 import FoodItem from "./FoodItem";
@@ -6,9 +8,19 @@ import FoodItem from "./FoodItem";
 const handleClick = () => console.log("Clicked");
 
 function App() {
+
+  const [pageState, setPageState] = useState("Dashboard");
+
+  const handlePageStateChange = (newPageState) => {
+    setPageState(newPageState);
+  }
+
   return (
     <div className="container">
-      <h1>Log Food</h1>
+      <Header
+      pageState={pageState}
+      onPageStateChange={handlePageStateChange}
+      />
       <Search />
       <Button
         onClick={handleClick}

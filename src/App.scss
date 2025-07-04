@@ -65,6 +65,29 @@ ul {
   padding: 2rem;
 }
 
+/* Header */
+
+header { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+header div {
+  padding: .5rem;
+}
+
+header button {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: .5rem;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 /* Button */
 
 .btn-component {
