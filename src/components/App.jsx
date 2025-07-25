@@ -1,42 +1,38 @@
-import React, { useState } from 'react';
-import "../App.scss";
-import Header from "./Header";
-import Button from "./Button";
-import Search from "./Search";
-import FoodItem from "./FoodItem";
-
-const handleClick = () => console.log("Clicked");
+import '../styles/App.scss';
+import BottomNavigation from './CommonUI/BottomNavigation';
+import TopNavigation from './CommonUI/TopNavigation';
+import { Outlet, useLocation } from 'react-router-dom';
 
 function App() {
 
-  const [pageState, setPageState] = useState("Dashboard");
+  const location = useLocation();
 
-  const handlePageStateChange = (newPageState) => {
-    setPageState(newPageState);
-  }
+  const PageTitleMap = {
+    '/': 'Home',
+    '/auth': 'Sign In Or Register',
+    '/profile': 'Profile',
+    '/dashboard': 'Dashboard',
+    '/nutrition': 'Nutrition',
+    '/exercise': 'Exercise',
+  };
+
+  const path = location.pathname;
+  const defaultTitle = path.slice(1).replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()) || 'Woops no title could be found, think of your own and imagine it\'s here';
+
+  const title = PageTitleMap[path] || defaultTitle
+
+
 
   return (
     <div className="container">
-      <Header
-      pageState={pageState}
-      onPageStateChange={handlePageStateChange}
-      />
-      <Search />
-      <Button
-        onClick={handleClick}
-        text="Create a Food"
-        className="fullw-btn"
-      />
-      <h2>Created Foods</h2>
-      <FoodItem
-        foodName="Apple"
-        calorieValue={52}
-        fatValue={3}
-        carbValue={96}
-        proteinValue={1}
-        foodMeasurement="Apple"
-        foodImgPath="src/assets/apple.webp"
-      />
+      <TopNavigation />
+
+      <main>
+        <h1>{title}</h1>
+        <Outlet />
+      </main>
+
+      <BottomNavigation />
     </div>
   );
 }

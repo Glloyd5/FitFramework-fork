@@ -88,6 +88,23 @@ header button {
 	outline: inherit;
 }
 
+/* Footer */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer nav {
+  display: flex;
+  gap: 2rem;
+}
+
+footer nav a {
+  color: white;
+}
+
 /* Button */
 
 .btn-component {

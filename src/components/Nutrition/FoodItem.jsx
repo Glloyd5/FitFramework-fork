@@ -1,5 +1,5 @@
 import React from "react";
-import MeasurementInput from "./MeasurementInput";
+import MeasurementInput from "../CommonUI/MeasurementInput";
 
 export default function FoodItem({
   foodName,
