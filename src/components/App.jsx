@@ -17,7 +17,7 @@ function App() {
   };
 
   const path = location.pathname;
-  const defaultTitle = path.slice(1).replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()) || 'Woops no title could be found, think of your own and imagine it\'s here';
+  const defaultTitle = path.slice(1).replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()) || 'Title missing';
 
   const title = PageTitleMap[path] || defaultTitle
 
